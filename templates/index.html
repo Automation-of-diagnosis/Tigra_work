@@ -13,52 +13,126 @@
   </head>
   <span class="badge badge-danger">SOFA</span>
   <span class="badge badge-primary">GCS</span>
+
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Ф.И.О.</span>
+        </div>
+        <input type="text" class="form-control" placeholder="пациент" aria-label="пациент" aria-describedby="basic-addon1">
+      </div>
+    </form>
+  </nav>
+
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">№ истории болезни</span>
+        </div>
+        <input type="text" class="form-control" placeholder="  " aria-label="  " aria-describedby="basic-addon1">
+      </div>
+    </form>
+  </nav>
+
   <body>
     <div class='container'>
     <h1>{{scale}}</h1>
     <div class='row'>
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">срАД (мм.рт.ст.)</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('srAD')}}</input>
+      
+        <div class="input-group mb-3">               
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">срАД</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>более 70 мм.рт.ст</option>
+            <option value="1">менее 70мм.рт.ст.</option>
+            <option value="2">Допамин мене 5мкг/кг/мин или Добутамин,любая доза</option>   
+            <option value="3">Допамин более 5 мкг/кг/мин /// Эпинефрин или Норэпинефрин менее 0,1 мкг/кг/мин</option>
+            <option value="4">Допамин более 15 мкг/кг/мин /// Эпинефрин или Норэпинефрин более 0,1 мкг/кг/мин</option>  
+          </select>
         </div>
+        
+        
+ 
         <div class="input-group input-group-lg">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-lg">Креатинин (ммоль/л)</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('creatinine')}}</input>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
+      
+
         <div class="input-group input-group-lg">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-lg">Тромбоциты (10*9/л)</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('platelets')}}</input>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
+
+
         <div class="input-group input-group-lg">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-lg">Билирубин (мкмоль/л)</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('bilirubin')}}</input>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
+
+
         <div class="input-group input-group-lg">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-lg">PaO2/FiO2 (мм.рт.ст.)</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('PaO2/FiO2')}}</input>
-        </div>
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">GCS</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">{{user_data.get('gsc')}}</input>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
         
+        <div class="input-group mb-3">               
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Открывание глаз</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Спонтанное</option>
+            <option value="1">В ответ на словесный приказ</option>
+            <option value="2">В ответ на болевое раздражение</option>   
+            <option value="3">Отсутсвует</option> 
+          </select>
+        </div>
+
+        <div class="input-group mb-3">               
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Двигательная активность</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Целенаправленная на словесный приказ</option>
+            <option value="1">Целенаправленная на болевое раздражение</option>
+            <option value="2">Нецеленаправленное на болевое раздражение</option>   
+            <option value="3">Патологичексое тоническое сгибание на болевое раздражение</option>
+            <option value="4">Патологичексое тоническое разгибане на болевое раздражение</option> 
+            <option value="5">Отсутсвие двигательной реакции на болевое раздражение</option> 
+          </select>
+        </div>
+
+        <div class="input-group mb-3">               
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Словесные ответы</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Сохранность ориентировки, быстрые, правильные ответы</option>
+            <option value="1">Спутанная речь</option>
+            <option value="2">Отдельные невнятные слова, неадекватные ответы</option>   
+            <option value="3">Нечленораздельне звуки</option>
+            <option value="4">Отсутсвие речи</option> 
+          </select>
+        </div>
     </div>
     </div>
+    
+
     <button type="button" class="btn btn-success btn-lg btn-block">Рассчитать</button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
